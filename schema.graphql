@@ -1,0 +1,27 @@
+type Query {
+    artists: [Artist!]!
+    albums: [Album!]!
+    tracks: [Track!]!
+}
+
+type Mutation {
+    createArtist(name: String!): Artist!
+}
+
+type Artist {
+    id: ID!
+    name: String!
+}
+
+type Album {
+    id: ID!
+    title: String!
+    artist: Artist!
+}
+
+type Track {
+    id: ID!
+    title: String!
+    track_num: Int!
+    album: Album!
+}
